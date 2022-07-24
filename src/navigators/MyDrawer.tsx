@@ -17,7 +17,7 @@ import {
 
 const Drawer = createDrawerNavigator();
 
-function Component(props: any) {
+const Component = (props: any) => {
   return (
     <Center>
       <Text mt="12" fontSize="18">
@@ -25,7 +25,7 @@ function Component(props: any) {
       </Text>
     </Center>
   );
-}
+};
 
 const getIcon = (screenName: any) => {
   switch (screenName) {
@@ -46,7 +46,7 @@ const getIcon = (screenName: any) => {
   }
 };
 
-function CustomDrawerContent(props: any) {
+const CustomDrawerContent = (props: any) => {
   return (
     <DrawerContentScrollView {...props}>
       <VStack space="6" mx="1">
@@ -142,8 +142,9 @@ function CustomDrawerContent(props: any) {
       </VStack>
     </DrawerContentScrollView>
   );
-}
-export default function MyDrawer() {
+};
+
+export const MyDrawer = () => {
   return (
     <Box flex={1}>
       <Drawer.Navigator
@@ -182,8 +183,9 @@ export default function MyDrawer() {
       </Drawer.Navigator>
     </Box>
   );
-}
+};
 
+/** Enable URL integration in browser when using on web */
 export const linking = {
   prefixes: [
     /* your linking prefixes */

@@ -1,34 +1,12 @@
 import * as React from "react";
-import { View, Text, Button } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Divider, Icon } from "native-base";
+import { Icon } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
-
-function HomeScreen({ navigation }: { navigation: any }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-      <Divider h={3} className="bg-transparent" />
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate("Details")}
-      />
-    </View>
-  );
-}
-function DetailsScreen({ navigation }: { navigation: any }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Details Screen</Text>
-      <Divider h={3} className="bg-transparent" />
-      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
-    </View>
-  );
-}
+import { DetailsScreen, HomeScreen } from "../screens";
 
 const Stack = createNativeStackNavigator();
 
-function MyStack() {
+export const MyStack = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
@@ -61,10 +39,9 @@ function MyStack() {
       <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );
-}
+};
 
-export default MyStack;
-
+/** Enable URL integration in browser when using on web */
 export const linking = {
   prefixes: [
     /* your linking prefixes */

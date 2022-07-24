@@ -2,8 +2,8 @@ import { NativeBaseProvider } from "native-base";
 import { TailwindProvider } from "tailwindcss-react-native";
 import React from "react";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
-import MyStack, { linking as Slinking } from "./src/components/MyStack";
-import MyDrawer, { linking as Dlinking } from "./src/components/MyDrawer";
+import { MyStack, Slinking } from "./src/navigators";
+import { MyDrawer, Dlinking } from "./src/navigators";
 
 const MyTheme = {
   ...DefaultTheme,
