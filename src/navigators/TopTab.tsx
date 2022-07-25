@@ -19,7 +19,7 @@ const MyTabBar = ({
   const { index } = TopTabValues;
 
   return (
-    <Box className="flex-row px-2 pt-10 pb-2 bg-green-900 shadow-lg">
+    <Box className="flex-row px-2 pt-10 bg-green-900 shadow-lg">
       {state.routes.map((route: any, i: any) => {
         const { options } = descriptors[route.key];
         const label =
